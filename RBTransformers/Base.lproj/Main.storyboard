@@ -31,27 +31,15 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyj-RO-RZ2">
-                                <rect key="frame" x="141" y="612" width="93" height="40"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
-                                <state key="normal" title="Start War">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startWar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXP-XS-Nyx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="w5a-9o-Hgr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0xx-Hk-4qr"/>
                             <constraint firstItem="39W-6r-fMc" firstAttribute="leading" secondItem="w5a-9o-Hgr" secondAttribute="leading" id="BOH-u5-6e1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qyj-RO-RZ2" secondAttribute="bottom" constant="15" id="Eed-3H-Mf2"/>
                             <constraint firstItem="w5a-9o-Hgr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MiG-uJ-JrQ"/>
                             <constraint firstItem="39W-6r-fMc" firstAttribute="top" secondItem="w5a-9o-Hgr" secondAttribute="top" id="cxS-XU-wuH"/>
                             <constraint firstItem="39W-6r-fMc" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ik3-Xw-vWy"/>
                             <constraint firstAttribute="trailing" secondItem="w5a-9o-Hgr" secondAttribute="trailing" id="kIG-Gg-7Xv"/>
-                            <constraint firstItem="qyj-RO-RZ2" firstAttribute="centerX" secondItem="w5a-9o-Hgr" secondAttribute="centerX" id="o55-z0-GLb"/>
                             <constraint firstItem="39W-6r-fMc" firstAttribute="trailing" secondItem="w5a-9o-Hgr" secondAttribute="trailing" id="qTe-jk-1EH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w5a-9o-Hgr" secondAttribute="bottom" id="qXY-4v-sFF"/>
                         </constraints>

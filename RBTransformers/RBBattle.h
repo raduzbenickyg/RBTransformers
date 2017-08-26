@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, RBBattleResult) {
     RBBattleResultDecepticonWins,
     RBBattleResultBothDestroyed,
     RBBattleResultEveryoneDestroyedGameEnds,
+    RBBattleResultTie,
     RBBattleResultUnknown
 };
 

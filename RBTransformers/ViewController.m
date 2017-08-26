@@ -19,11 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self startWar];
 }
 
-- (IBAction)startWar:(UIButton *)sender {
-    
-    sender.enabled = NO;
+- (void)startWar {
     
     NSError *error;
     NSString* jsonPath = [[NSBundle mainBundle] pathForResource:@"transformers" ofType:@"json"];
@@ -31,7 +30,6 @@
     NSArray *transformersJson = [NSJSONSerialization JSONObjectWithData:transformersJsonData options:NSJSONReadingAllowFragments error:&error];
     
     if (error) {
-        sender.enabled = YES;
         self.textView.text = error.localizedDescription;
         return;
     }
@@ -40,12 +38,10 @@
     [[RBWarMachine shared] startBattleWithLineup:transformersJson].thenOnMain (^id(RBWarResult* result)  {
         
         [self updateUIWithResult:result];
-        sender.enabled = YES;
         return nil;
         
     },nil).thenOnMain(nil, ^id(NSError* error){
         
-        sender.enabled = YES;
         NSLog(@"************ WAR ENDED WITH ERROR ************ %@", error);
         self.textView.text = error.localizedDescription;
         return nil;
@@ -58,10 +54,10 @@
     
     NSLog(@"\n\n");
     NSLog(@"************ WAR RESULTS START ************");
-    NSLog(@"winners                     : %@", result.winningTeam);
+    NSLog(@"winners                     : %@", result.winningTeamMembersNames);
     NSLog(@"battles fought              : %d", result.battlesFought);
-    NSLog(@"winning team (%@)                   : %@", result.winningTeam, result.winningTeamMembers);
-    NSLog(@"survivors from losing team (%@)     : %@", result.losingTeam, result.survivingLosingTeamMembers);
+    NSLog(@"winning team (%@)                   : %@", result.winningTeamMembersNames, result.winningTeamMembersArray);
+    NSLog(@"survivors from losing team (%@)     : %@", result.losingTeamMembersNames, result.survivingLosingTeamMembersArray);
     NSLog(@"************ WAR RESULTS END ************");
     NSLog(@"\n\n");
 }

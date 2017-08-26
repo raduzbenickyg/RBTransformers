@@ -10,30 +10,33 @@
 
 @interface RBWarResult ()
 @property (nonatomic, assign, readwrite) int battlesFought;
-@property (nonatomic, strong, readwrite) NSArray <RBTransformer*> *winningTeamMembers;
-@property (nonatomic, strong, readwrite) NSArray <RBTransformer*> *survivingLosingTeamMembers;
-@property (nonatomic, strong, readwrite) NSString * winningTeam;
-@property (nonatomic, strong, readwrite) NSString *losingTeam;
+@property (nonatomic, assign, readwrite) RBBattleResult result;
+@property (nonatomic, strong, readwrite) NSArray <RBTransformer*> *winningTeamMembersArray;
+@property (nonatomic, strong, readwrite) NSArray <RBTransformer*> *survivingLosingTeamMembersArray;
+@property (nonatomic, strong, readwrite) NSString *winningTeamMembersNames;
+@property (nonatomic, strong, readwrite) NSString *losingTeamMembersNames;
 @property (nonatomic, strong, readwrite) NSString *resultDescription;
 @end
 
 @implementation RBWarResult
 
 -(instancetype)initWithBattlesFought: (int) battlesFought
-                  winningTeamMembers: (NSArray <RBTransformer*> *) winningTeamMembers
-          survivingLosingTeamMembers: (NSArray <RBTransformer*> *) survivingLosingTeamMembers
-                         winningTeam: (NSString *) winningTeam
-                          losingTeam: (NSString *) losingTeam
+                  winningTeamMembers: (NSArray <RBTransformer*> *) winningTeamMembersArray
+          survivingLosingTeamMembers: (NSArray <RBTransformer*> *) survivingLosingTeamMembersArray
+                         winningTeam: (NSString *) winningTeamNames
+                          losingTeam: (NSString *) losingTeamNames
                    resultDescription: (NSString *) resultDescription
+                           warResult: (RBBattleResult) result
 {
     self = [super init];
     
     if (self) {
         self.battlesFought = battlesFought;
-        self.winningTeamMembers = winningTeamMembers;
-        self.survivingLosingTeamMembers = survivingLosingTeamMembers;
-        self.winningTeam = winningTeam;
-        self.losingTeam = losingTeam;
+        self.result = result;
+        self.winningTeamMembersArray = winningTeamMembersArray;
+        self.survivingLosingTeamMembersArray = survivingLosingTeamMembersArray;
+        self.winningTeamMembersNames = winningTeamNames;
+        self.losingTeamMembersNames = losingTeamNames;
         self.resultDescription = resultDescription;
     }
     

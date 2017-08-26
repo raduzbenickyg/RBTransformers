@@ -90,6 +90,7 @@
                 break;
             case RBBattleResultEveryoneDestroyedGameEnds:
             case RBBattleResultUnknown:
+            case RBBattleResultTie:
             {
                 NSLog(@"battle between Autobot: %@ and Decepticon: %@ RESULT: EveryoneDestroyedGameEnds", obj.autobot.name, obj.decepticon.name);
                 [self.eliminatedAutobots removeAllObjects];
@@ -107,7 +108,7 @@
     [self decideBattleResult];
 }
 
-- (void) decideBattleResult {
+- (void) decideBattleResult{
     
     NSMutableString *resultString = [NSMutableString new];
     
@@ -126,6 +127,8 @@
     NSString* winningTeam = @"";
     NSString* losingTeam = @"";
     
+    RBBattleResult result = RBBattleResultUnknown;
+    
     if (self.eliminatedAutobots.count < self.eliminatedDecepticons.count) {
         winningTeamMemberArray = [self lineupArray:self.battlingAutobots];
         survivingLosingTeamMemberArray = [self lineupArray:self.survivingDecepticons];
@@ -138,6 +141,8 @@
         
         winningString = [NSString stringWithFormat:@"Winning team (Autobots): %@\n", winningTeamMemberNames];
         losingString = [NSString stringWithFormat:@"Survivors from the losing team (Decepticons): %@\n", survivingLosingTeamMemberNames];
+        
+        result = RBBattleResultAutobotWins;
     }
     else if (self.eliminatedDecepticons.count < self.eliminatedAutobots.count) {
         winningTeamMemberArray = [self lineupArray:self.battlingDecepticons];
@@ -151,12 +156,16 @@
         
         winningString = [NSString stringWithFormat:@"Winning team (Decepticons): %@\n", winningTeamMemberNames];
         losingString = [NSString stringWithFormat:@"Survivors from the losing team (Autobots): %@", survivingLosingTeamMemberNames];
+        
+        result = RBBattleResultDecepticonWins;
     }
     else {
         winningString = @"It's a no decision! A tie.\n";
         losingString = @"It's a no decision! A tie.";
         winningTeam = @"It's a tie";
         losingTeam = @"It's a tie";
+        
+        result = RBBattleResultTie;
     }
     
     [resultString appendString:winningString];
@@ -167,7 +176,8 @@
                                      survivingLosingTeamMembers:survivingLosingTeamMemberArray
                                                     winningTeam:winningTeam
                                                      losingTeam:losingTeam
-                                              resultDescription:resultString];
+                                              resultDescription:resultString
+                                                      warResult:result];
 
     // This is the main (war) promise given to the ViewController, let's finish it with a result string
     [self.promise fulfillWithValue:self.warResult];
