@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tr_logo" translatesAutoresizingMaskIntoConstraints="NO" id="w5a-9o-Hgr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Start the war below..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="39W-6r-fMc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyj-RO-RZ2">
+                                <rect key="frame" x="141" y="612" width="93" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
+                                <state key="normal" title="Start War">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startWar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lXP-XS-Nyx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w5a-9o-Hgr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0xx-Hk-4qr"/>
+                            <constraint firstItem="39W-6r-fMc" firstAttribute="leading" secondItem="w5a-9o-Hgr" secondAttribute="leading" id="BOH-u5-6e1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qyj-RO-RZ2" secondAttribute="bottom" constant="15" id="Eed-3H-Mf2"/>
+                            <constraint firstItem="w5a-9o-Hgr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MiG-uJ-JrQ"/>
+                            <constraint firstItem="39W-6r-fMc" firstAttribute="top" secondItem="w5a-9o-Hgr" secondAttribute="top" id="cxS-XU-wuH"/>
+                            <constraint firstItem="39W-6r-fMc" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ik3-Xw-vWy"/>
+                            <constraint firstAttribute="trailing" secondItem="w5a-9o-Hgr" secondAttribute="trailing" id="kIG-Gg-7Xv"/>
+                            <constraint firstItem="qyj-RO-RZ2" firstAttribute="centerX" secondItem="w5a-9o-Hgr" secondAttribute="centerX" id="o55-z0-GLb"/>
+                            <constraint firstItem="39W-6r-fMc" firstAttribute="trailing" secondItem="w5a-9o-Hgr" secondAttribute="trailing" id="qTe-jk-1EH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w5a-9o-Hgr" secondAttribute="bottom" id="qXY-4v-sFF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="39W-6r-fMc" id="cOb-OW-tMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tr_logo" width="270" height="480"/>
+    </resources>
+</document>
