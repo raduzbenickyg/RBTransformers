@@ -4,10 +4,10 @@ RBTransformers
 This is an Objective-C project I've done to showcase a few different programming techniques. 
 
 Objectives:
-The Transformers are at war and  you  are in charge of settling the score! You’re to evaluate who wins a fight between the Autobots and the Decepticons. Here are the rules.
+The Transformers are at war and  you  are in charge of settling the score! Here are the rules.
 
-● Each Transformer has the following criteria on their tech spec: Strength, Intelligence, Speed, Endurance, Rank, Courage , Firepower, Skill
-● The “overall rating” of a Transformer is the following formula: (Strength + Intelligence + Speed + Endurance + Firepower)
+1. Each Transformer has the following criteria on their tech spec: Strength, Intelligence, Speed, Endurance, Rank, Courage , Firepower, Skill
+2. The “overall rating” of a Transformer is the following formula: (Strength + Intelligence + Speed + Endurance + Firepower)
 ● Each Transformer must either be an Autobot or a Deception.
 ● The program takes input that describes a group of Transformers and based on that group displays: The number of battles, The winning team, The surviving members of the losing team
 ● The teams is pre-sorted by rank and faced off one on one against each other in order to determine a victor, the loser is eliminated
